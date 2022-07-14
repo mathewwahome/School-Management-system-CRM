@@ -1,0 +1,10 @@
+.avater{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.merit_results{
+    width: 100%;
+    margin-bottom: 4px;
+    text-align: center;
+}

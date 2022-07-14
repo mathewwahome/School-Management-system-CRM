@@ -1,0 +1,14 @@
+
+.body_head{
+    background-image: url("../images/erika-fletcher-MZxqc6n9qCw-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+.card-header img{
+    width: 100%;
+    height: auto;
+
+}
+/*erika-fletcher-MZxqc6n9qCw-unsplash.jpg*/
