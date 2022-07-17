@@ -22,15 +22,12 @@
 
     </header>
     <section>
-        <form action="login_db.php" class='lib_signup_form' method='post'>
+        <form action="lib_users_db.php" class='lib_signup_form' method='post'>
             <center>
-                <h1>Welcome Back.</h1>
+                <h1>Welcome</h1>
             </center>
-            <?php if (isset($_GET['succ'])) { ?>
-                <p class="succ" style="color: green"><?php echo $_GET['succ']; ?></p>
-            <?php } ?>
-            <?php if (isset($_GET['errorl'])) { ?>
-                <p class="errorl" style="color: red"><?php echo $_GET['errorl']; ?></p>
+            <?php if (isset($_GET['lierror'])) { ?>
+                <p class="lierror" style="color: red"><?php echo $_GET['lierror']; ?></p>
             <?php } ?>
             <label >User Name</label>
             <input type="text" name="name" class="form-control" placeholder="Name" required>
@@ -38,8 +35,10 @@
             <input type="password" name="pin" class="form-control" placeholder="Pin" required>
             <label >Password</label>
             <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <input type="submit" name="btn_lib_logn" class="btn btn-outline-info mt-2" value='Register' required>
-           
+            <input type="submit" name="btn_li_std_reg" class="btn btn-outline-info mt-2" value='Register' required>
+            <?php if (isset($_GET['succ'])) { ?>
+                <p class="succ" style="color: green"><?php echo $_GET['succ']; ?></p>
+            <?php } ?>
         </form>
     </section>
     <footer>

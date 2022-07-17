@@ -139,6 +139,7 @@ if (isset($_GET["u_id"])){
         <div class="col-6">
             <table class="table table-bordered table-hover table-dark ">
                 <h3>Students list.</h3>
+              
                 <tr>
                     <th>ADM</th>
                     <th>Name</th>

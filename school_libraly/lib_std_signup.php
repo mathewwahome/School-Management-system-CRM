@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User libraly Signup</title>
+    <title>libraly Signup</title>
     <script src="../assets/bootstrap/js/bootstrap.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../assets/bootstrap/js/popper.min.js"></script>
@@ -22,24 +22,22 @@
 
     </header>
     <section>
-        <form action="login_db.php" class='lib_signup_form' method='post'>
-            <center>
-                <h1>Welcome Back.</h1>
-            </center>
+        <form action="lib_std_sgnup_db.php" class='lib_signup_form' method='post'>
+            <?php if (isset($_GET['lierror'])) { ?>
+                <p class="lierror" style="color: red"><?php echo $_GET['lierror']; ?></p>
+            <?php } ?>
+            <label >Student Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Student Name" requred>
+            <label >Year of entry</label>
+            <input type="text" name="year" class="form-control" placeholder="Year of entry" requred>
+            <label >Form</label>
+            <input type="text" name="form" class="form-control" placeholder="Form" requred>
+            <label >Addmission</label>
+            <input type="text" name="addmission" class="form-control" placeholder="Addmission Number" requred>
+            <input type="submit" name="btn_li_std_reg" class="btn btn-outline-info mt-2" value='Register' requred>
             <?php if (isset($_GET['succ'])) { ?>
                 <p class="succ" style="color: green"><?php echo $_GET['succ']; ?></p>
             <?php } ?>
-            <?php if (isset($_GET['errorl'])) { ?>
-                <p class="errorl" style="color: red"><?php echo $_GET['errorl']; ?></p>
-            <?php } ?>
-            <label >User Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Name" required>
-            <label >Pin</label>
-            <input type="password" name="pin" class="form-control" placeholder="Pin" required>
-            <label >Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <input type="submit" name="btn_lib_logn" class="btn btn-outline-info mt-2" value='Register' required>
-           
         </form>
     </section>
     <footer>
