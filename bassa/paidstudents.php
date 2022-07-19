@@ -22,15 +22,15 @@
             <h3>List of Students with fees balance.</h3>
             <table class="table">
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Name</th>
+                    <th>Adm</th>
+                    <th>Balance</th>
                     <th></th>
                     <th></th>
                 </tr>
                 <?php
                     require_once "../connection_db.php";
-                    $selectquery = "";
+                    $selectquery = "SELECT `id`, `admission`, `student_name`, `form`, `amount_paid`, `balans`, `pament_day`, `total_fee` FROM `school_fees` WHERE 1";
                     $select = mysqli_query($connection, $selectquery);
 
                     foreach($select as $std){
@@ -42,6 +42,14 @@
                         $balance= $std['balans'];
                         $paymentday= $std['pament_day'];
                         $totalfee =$std['total_fee'];
+
+                        if($balance > 0){
+                            echo "<tr>
+                                        <td>$name</td>
+                                        <td>$admission</td> 
+                                        <td>$balance</td>
+                                    </tr>";
+                        }
                     }
                 ?>
             </table>
