@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbName = "students_results";
+$dbName = "school";
 
 $connection = mysqli_connect($host,$user,$password,$dbName);
 if (!isset($connection)){

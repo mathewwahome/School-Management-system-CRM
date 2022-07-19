@@ -1,0 +1,17 @@
+.books_form{
+    width: 70%;
+    padding-bottom: 20%;
+    padding-top: 10%;
+    background-image: url(../images/shubham-dhage-ykFTt5Dq1RU-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form input{
+    background: unset;
+    padding: 10px;
+    margin: 10px;
+}
+.booksgivingmainpage{
+    background-color: black;
+}

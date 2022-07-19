@@ -28,9 +28,7 @@
             </button>
             <div class="collapse navbar-collapse " id="collapsibleNavbar">
                 <ul class="navbar-nav navnavfloat">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
+                    
 
                     <div class="btn-group mr-2">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Signup</button>
@@ -40,7 +38,7 @@
                         </ul>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdow n-toggle" data-bs-toggle="dropdown">Login</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Login</button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="teacher.php">As Teacher</a></li>
                             <li><a class="dropdown-item" href="login.php">As Student</a></li>
