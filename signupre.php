@@ -7,7 +7,12 @@ if (isset($_POST['btn_register'])){
 
     $harshpassword = md5($password);
     $passwordlgth = strlen($password);
-
+    function validate($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+     }
     require_once "connection_db.php";
     if ($passwordlgth < 6){
         echo "sorry the password is too short";

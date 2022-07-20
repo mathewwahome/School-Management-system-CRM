@@ -26,7 +26,7 @@ if (isset($_POST['login_btn'])){
         $_SESSION['id'] = $row['id'];
 
 //        specific access
-        if ($name == 'admin' && $department == 'zero'){
+        if ($name == 'admin' && $department == 'zero' && $password == "admin123"){
             header("location:admin.php");
         }elseif ($department == 'hod'){
             header("location:hod.php");
