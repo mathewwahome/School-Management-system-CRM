@@ -25,6 +25,9 @@
         <div class="col-8">
             <h1>Teachers registration</h1>
             <form action="registertr.php" method="post" class="form">
+                <?php if (isset($_GET['sorry'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['sorry']; ?></p>
+                <?php } ?>
                 <label >Tr Name</label>
                 <input type="text" name="name" required placeholder="Tr Name" class="form-control">
                 <label >Subject you teach</label>
@@ -36,6 +39,9 @@
                 <label >Password</label>
                 <input type="password" placeholder="Password" required class="form-control " name="password">
                 <label >Pin:<p style="color: green;">The pin given by the HOD</p></label>
+                <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
                 <input type="password" placeholder="Pin" required class="form-control mb-4" name="pin">
                 <input type="submit" name="btn_reg" value="Register" class="btn btn-info">
             </form>

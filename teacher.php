@@ -54,6 +54,9 @@
         <div class="col-6">
             <h1>Login Here</h1>
             <form action="teacherlogin.php" method="post">
+            <?php if (isset($_GET['oky'])) { ?>
+                <p class="error" style="color: green"><?php echo $_GET['oky']; ?></p>
+                <?php } ?>
                 <label >User Name</label>
                 <input type="text" name="t_name" placeholder="Username full" class="p-4 mb-4 form-control">
                 <label >Password</label>

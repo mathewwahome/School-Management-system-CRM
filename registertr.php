@@ -7,8 +7,8 @@ if (isset($_POST['btn_reg'])){
     $department = $_POST['department'];
     $password = $_POST['password'];
     $pin = $_POST['pin'];
-//    md5
-    $md5 = md5($password);
+
+    $md5 = md5($password);//md5
     $pinc = 8380;
 
     require_once "connection_db.php";
@@ -18,15 +18,14 @@ if (isset($_POST['btn_reg'])){
     $select = mysqli_query($connection,$selectQuery);
     $checkrows= mysqli_num_rows($select);
     if ($checkrows > 0 ){
-        if ($pin != $pinc){
-            echo "wrong pin";
-        }else{
-            echo "Teacher registered";
-        }
+       header("location:teacherregister.php?sorry= An account aready exists");
+    }elseif ($pin != $pinc){
+        header("location:teacherregister.php?error=Sorry Wrong pin!");
+
     }else{
         $insert = mysqli_query($connection, $insertquery);
         if (isset($insert)){
-            header("location:teacher.php");
+            header("location:teacher.php?oky= Login now please");
         }else {
             echo "failed to insert";
         }

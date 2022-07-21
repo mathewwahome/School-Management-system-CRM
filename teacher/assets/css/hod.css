@@ -1,0 +1,27 @@
+.admin_content{
+    display: flex;
+    height: 90vh;
+}
+.side_bar_hod{
+    background-color: rgb(165, 187, 233);
+    width: 20%;
+    height: 100%;
+}
+.content_container{
+    background-color: pink;
+    width: 80%;
+    height: 100%;
+    padding-left: 5%;
+}
+.img_hod{
+    display: flex;
+    color: white;
+    padding-left: 6px;
+}
+.img_hod img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+}
