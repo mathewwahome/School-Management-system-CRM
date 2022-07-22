@@ -9,13 +9,7 @@
     <title>HOD</title>
     <link rel="stylesheet" href="assets/css/hod.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style type="text/css">
-                .container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-    </style>
+   
 </head>
 <body>
     <header>
@@ -31,21 +25,34 @@
                 </div>
                 <hr>
                 <div><h4>dashboard</h4></div>
-                <div><h4><a href="#one">one</a></h4></div>
+                <div><a href="#two" ><h4>Add Teacher</h4></a></div>
                 <hr>
-                <div><p><ul><li><p>pages</p></li></ul></p></div>
+                <div><a href=""><h4>View merits</h4></a></div>
                 <hr>
-                <div><h4>Settings</h4></div>
+                <div><a href=""><h4>Update results</h4></a></div>
                 <hr>
-                <div><h4>About</h4></div>
+                <div><a href="#zero"><h4>View results</h4></a></div>
                 <hr>
+                <div><a href="#one"><h4>list of techers</h4></a></div>
+                <div><a href=""><h4>Exam calender</h4></a></div>
+                <hr>
+                <div><a href=""><h4>school activities</h4></a></div>
+                <hr>
+                <div><a href=""><h4>Timetables</h4></a></div>
+                <hr>
+                <div><a href=""><h4>Delete student</h4></a></div>
+                <hr>
+
             </div>
             <div class='content_container'>
-                <div><div class="container">
-<canvas width="200" height="200"></canvas>
-</div></div>
+                <div class="web_cuptuer">
+                    <!-- ///progress bar -->
+                </div>
                 <hr>
-                <div><p>two</p></div>
+                <div>
+                    <h4>Students merit</h4>
+                    
+                </div>
                 <hr>
                 <div>
                     <div id="one">
@@ -55,38 +62,100 @@
                     </div>
                 </div>
                 <hr>
+                <div id="zero">
+                <div class="col" >
+            <h1>Login Here</h1>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <form action="loginre.php" method="post">
+                <label >User Name</label>
+                <input type="text" name="name" required placeholder="Username full" class="p-4 mb-4 form-control">
+                <label >Password</label>
+                <input type="password" name="u_pass" required placeholder="password" class="p-4 mb-4 form-control">
+                <label >Admission</label>
+                <input type="text" name="u_admission" required placeholder="Admission" class="p-4 mb-4 form-control">
+                <input type="submit" name="login_btn" value="Login" class="btn_login btn btn-info mt-3">
+            </form>
+            
+                </div>
+                <hr>
+                <div>
+                <div class="col">
+            <h1>Login Here</h1>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <form action="loginre.php" method="post">
+                <label >User Name</label>
+                <input type="text" name="name" required placeholder="Username full" class="p-4 mb-4 form-control">
+                <label >Password</label>
+                <input type="password" name="u_pass" required placeholder="password" class="p-4 mb-4 form-control">
+                <label >Admission</label>
+                <input type="text" name="u_admission" required placeholder="Admission" class="p-4 mb-4 form-control">
+                <input type="submit" name="login_btn" value="Login" class="btn_login btn btn-info mt-3">
+            </form>
+            
+                </div>
+                <hr>
+                <div>
+                <div class="col">
+            <h1>Login Here</h1>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <form action="loginre.php" method="post">
+                <label >User Name</label>
+                <input type="text" name="name" required placeholder="Username full" class="p-4 mb-4 form-control">
+                <label >Password</label>
+                <input type="password" name="u_pass" required placeholder="password" class="p-4 mb-4 form-control">
+                <label >Admission</label>
+                <input type="text" name="u_admission" required placeholder="Admission" class="p-4 mb-4 form-control">
+                <input type="submit" name="login_btn" value="Login" class="btn_login btn btn-info mt-3">
+            </form>
+            
+                </div>
+                <hr>
+                <div>
+                <div class="col">
+            <h1>Login Here</h1>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <form action="loginre.php" method="post">
+                <label >User Name</label>
+                <input type="text" name="name" required placeholder="Username full" class="p-4 mb-4 form-control">
+                <label >Password</label>
+                <input type="password" name="u_pass" required placeholder="password" class="p-4 mb-4 form-control">
+                <label >Admission</label>
+                <input type="text" name="u_admission" required placeholder="Admission" class="p-4 mb-4 form-control">
+                <input type="submit" name="login_btn" value="Login" class="btn_login btn btn-info mt-3">
+            </form>
+            
+                </div>
+                <hr>
+                <div  id="two">
+                <div class="col">
+            <h1>Login Here</h1>
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <form action="loginre.php" method="post">
+                <label >User Name</label>
+                <input type="text" name="name" required placeholder="Username full" class="p-4 mb-4 form-control">
+                <label >Password</label>
+                <input type="password" name="u_pass" required placeholder="password" class="p-4 mb-4 form-control">
+                <label >Admission</label>
+                <input type="text" name="u_admission" required placeholder="Admission" class="p-4 mb-4 form-control">
+                <input type="submit" name="login_btn" value="Login" class="btn_login btn btn-info mt-3">
+            </form>
+            
+                </div>
             </div>
         </div>
     </section>
     
     
-<script>
-    let ctx = document.querySelector("canvas").getContext("2d");
 
-    const results = [
-        {mood: "Angry", total: 1499, shade: "#0a9627"},
-        {mood: "Happy", total: 478, shade: "#960A2C"},
-        {mood: "Melancholic", total:332, shade: "#332E2E"},
-        {mood: "Gloomy", total: 195, shade: "#F73809"}
-    ];
-
-    let sum = 0;
-    let totalNumberOfPeople = results.reduce((sum, {total}) => sum + total, 0);
-    let currentAngle = 0;
-
-    for (let moodValue of results) {
-        //calculating the angle the slice (portion) will take in the chart
-        let portionAngle = (moodValue.total / totalNumberOfPeople) * 2 * Math.PI;
-        //drawing an arc and a line to the center to differentiate the slice from the rest
-        ctx.beginPath();
-        ctx.arc(100, 100, 100, currentAngle, currentAngle + portionAngle);
-        currentAngle += portionAngle;
-        ctx.lineTo(100, 100);
-        //filling the slices with the corresponding mood's color
-        ctx.fillStyle = moodValue.shade;
-        ctx.fill();
-    }
-
-</script>
 </body>
 </html>
