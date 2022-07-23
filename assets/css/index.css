@@ -1,0 +1,45 @@
+.the_bass{
+    background-image: url(../images/erik-torres-_YP5JdlhdKo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.profile_info{
+    width: 50%;
+    background-image: url(../images/erik-torres-_YP5JdlhdKo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.profile_pic{
+    background-image: url(../images/erik-torres-_YP5JdlhdKo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.profile_pic img{
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+}
+.additional_info{
+    background-color: darkslategray;
+    text-align: center;
+    text-decoration: none;
+    height: 50vh;
+}
+#additional_info{
+    width: 60%;
+}
+.card{
+    width: 300px;
+    height: 700px;
+    background-image: url(../images/erik-torres-_YP5JdlhdKo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
