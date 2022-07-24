@@ -19,8 +19,8 @@
     <div class="row rounded m-5 pt-4 pb-2 bg-dark">
         <div class="col">
             <h1>Login Here</h1>
-            <?php if (isset($_GET['error'])) { ?>
-                <p class="error" style="color: red"><?php echo $_GET['error']; ?></p>
+            <?php if (isset($_GET['errorl'])) { ?>
+                <p class="errorl" style="color: red"><?php echo $_GET['errorl']; ?></p>
             <?php } ?>
             <form action="loginre.php" method="post">
                 <label >User Name</label>

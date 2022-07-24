@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['name'])){
-    header('location:index.php');
+    header('location:../index.php');
 }
 ?>
 
@@ -16,12 +16,12 @@ if (!isset($_SESSION['name'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>myresults page</title>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="assets/bootstrap/js/popper.min.js"></script>
-    <script src="assets/bootstrap/js/jquery-3.4.0.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="../assets/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/bootstrap/js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['name'])){
             $name = $_POST['stdname'];
             $adm = $_POST['stdadm'];
 
-            require_once "connection_db.php";
+            require_once "../database/connection_db.php";
 
             $selectquery = "SELECT * FROM `results` WHERE studentname='$name'  and adimision='$adm' ";
             $selected = mysqli_query($connection, $selectquery);
@@ -90,16 +90,17 @@ if (!isset($_SESSION['name'])){
                 $pass = $_POST['stdpass'];
 
                 $md5 = md5($pass);
-                require_once "connection_db.php";
-
+                require_once "../database/connection_db.php";
+                // $selectallQuery = "SELECT * FROM `results` WHERE 1";
+                // $selectall = mysqli_query($connection, $selectallQuery);
                 $selectquery = "SELECT * FROM `results` WHERE studentname='$name'  and adimision='$adm' ";
                 $selected = mysqli_query($connection, $selectquery);
 //            details verification
                 $counttherow = mysqli_num_rows($selected);
                 if ($counttherow > 0) {
-                    session_start();
-                    $_SESSION['stdname'] = $name;
-                    foreach ($selected as $student) {
+                    $previous_marks = 0;            
+                    $position = 1;
+                    foreach ($selected as $key => $student) {
                         $id = $student['id'];
                         $admission = $student['adimision'];
                         $name = $student['studentname'];
@@ -114,7 +115,14 @@ if (!isset($_SESSION['name'])){
                         $histo = $student['history'];
                         $comp = $student['computer'];
                         $grade = $student['grade'];
-                        $position = $student['position'];
+                        $marks = $student['marks'];
+                        // $position = $student['position'];
+
+                        if($previous_marks != $marks){
+                            $position = $key + 1;
+                        }
+        
+                        $previous_marks = $marks;
                         echo "
                         <tr>
                             <td>English</td>

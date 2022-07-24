@@ -8,15 +8,15 @@ if (isset($_POST['btn_insert'])){
     $location = $_POST['location'];
     $number = $_POST['number'];
     
-    require_once "../connection_db.php";
+    require_once "../database/connection_db.php";
     
     $insertQuery = "INSERT INTO `liblary_books`(`id`,`book_name`, `subject`, `author`, `description`, `location`,`number`)
                     VALUES (null,'$bookname','$subject','$author','$description','$location','$number')";
     $insert=mysqli_query($connection, $insertQuery);
     if(isset($insert)){
-        header("location:books.php");
+        header("location:libraly.php?wow=Book added");
     }else{
-        echo "sorry";
+        header("location:libraly.php?erro=Unable to add the book.");
     }
 }
 ?>

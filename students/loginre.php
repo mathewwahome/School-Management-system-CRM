@@ -6,7 +6,7 @@ if (isset($_POST['login_btn'])){
     $admission = $_POST['u_admission'];
     $hrshpassword = md5($password);
 
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
     function validate($data){
         $data = trim($data);
         $data = stripslashes($data);

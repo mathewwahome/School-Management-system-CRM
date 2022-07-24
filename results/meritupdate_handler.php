@@ -18,24 +18,34 @@ if (isset($_POST["btn_update"])){
     $marks = ($math + $eng + $kiswa + $chem + $phy + $cre + $bio + $histo + $bst + $comp);
     $average_marks = ($math + $eng + $kiswa + $chem + $phy + $cre + $bio + $histo + $bst + $comp) / 9;
 
-    if ($average_marks <= 30.0){
+    if ($average_marks <= 35.0){
         $meangrade = "E";
-    }elseif ($average_marks <= 40.0){
+    }elseif ($average_marks <= 39.0){
         $meangrade = "D-";
-    }elseif ($average_marks <= 50.0){
+    }elseif ($average_marks <= 44.0){
         $meangrade = "D";
-    }elseif ($average_marks <= 60.0){
+    }elseif ($average_marks <= 50.0){
         $meangrade = "D+";
-    }elseif ($average_marks <= 70.0){
+    }elseif ($average_marks <= 54.0){
         $meangrade = "C-";
+    }elseif ($average_marks <= 59.0){
+        $meangrade = "C";
+    }elseif ($average_marks <= 65.0){
+        $meangrade = "C+";
+    }elseif ($average_marks <= 70.0){
+        $meangrade = "B-";
+    }elseif ($average_marks <= 75.0){
+        $meangrade = "B";
     }elseif ($average_marks <= 80.0){
-        $meangrade = "A";
+        $meangrade = "B+";
+    }elseif ($average_marks <= 85.0){
+        $meangrade ="A-";
     }else {
-        $meangrade = "A+";
+        $meangrade = "A";
     }
     
     //connect to the database  to return back the data
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
     //create the update query
     $updateQuery = "UPDATE `results` SET 
                      `adimision`='$adm',`studentname`='$userName',
@@ -48,7 +58,7 @@ if (isset($_POST["btn_update"])){
     $update = mysqli_query($connection, $updateQuery);
     if (isset($update)){
         //        location
-        header("location:hodmerit.php");
+        header("location:../hod/hodmerit.php");
     }else{
         echo "Updating failed";
     }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['name'])){
-    header('location:index.php');
+    header('location:../index.php');
 }
 ?>
 <?php
@@ -19,7 +19,7 @@ if (isset($_GET["u_id"])){
 
 <?php
 
-require_once "connection_db.php";
+require_once "../database/connection_db.php";
 $sql = "SELECT * FROM `results` WHERE id = '$userId'";
 $conectsql =mysqli_query($connection,$sql);
 foreach ($conectsql as $student) {
@@ -52,17 +52,17 @@ foreach ($conectsql as $student) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>update</title>
-    <script src="assets/bootstrap/js/jquery-3.4.0.js"></script>
-    <script src="assets/bootstrap/js/popper.min.js"></script>
-    <script src ="assets/bootstrap/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <script src="../assets/bootstrap/js/jquery-3.4.0.js"></script>
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <script src ="../assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
 </head>
 <body>
 
 <section>
     <div class="col-4">
         <h4>Update Results for #name.</h4>
-        <form class="form" method="post" action="meritupdate_handler.php">
+        <form class="form" method="post" action="../results/meritupdate_handler.php">
 
             <input value="<?php echo $userId; ?>" name="u_id" type="hidden">
             <input type="text" value="<?php echo $admission; ?>" name="u_addmin" class="form-control" placeholder="Admission">

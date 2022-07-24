@@ -36,7 +36,7 @@ if (isset($_POST['give_book_to_std'])){
                 <h1>Collecting of books</h1>
                 <form action ='std_bk_giving_db.php' class='form' method='post'>
                 <input type='text'required placeholder='Student name' name='studentname'class='form-control'>
-                <input type='text'required placeholder='addmission N0. name='admissionno' class='form-control'>
+                <input type='text'required placeholder='addmission N0.' name='admissionno' class='form-control'>
                 <input type='text'class='form-control' required placeholder='book Name' name='book_name'>
                 <input type='text' required name='subject' placeholder='Subject' class='form-control'> 
                 <input type='submit' name='collect_bk' class='btn btn-info'>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['u_name'])){
-    header('location:index.php');
+if (!isset($_SESSION['name'])){
+    header('location:../index.php');
 }
 ?>
 <?php
@@ -14,14 +14,14 @@ if (!isset($_SESSION['u_name'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Students page</title>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="assets/bootstrap/js/popper.min.js"></script>
-    <script src="assets/bootstrap/js/jquery-3.4.0.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="../assets/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/bootstrap/js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="assets/css/students.css">
+    <link rel="stylesheet" href="../assets/css/students.css">
 </head>
 <!--The HOD has the following abilities
 1.register teachers
@@ -52,7 +52,7 @@ t
                 </div>
                 <div class="float-right mr-4">
                     <div class="btn-group">
-                        <img class="avater" src="assets/images/adrian-regeci-1Ad6gTbYAsM-unsplash.jpg" type="button" data-bs-toggle="dropdown">
+                        <img class="avater" src="../assets/images/adrian-regeci-1Ad6gTbYAsM-unsplash.jpg" type="button" data-bs-toggle="dropdown">
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="myaccount.php">My Account</a></li>
                         </ul>
@@ -72,8 +72,8 @@ t
             </div>
             <div class="card-body">
                 <!--                merit form 1,2,3,4-->
-                <a href="merit.php"><button class="btn btn-info merit_results">View Merit</button></a>
-                <a href="results.php"><button class="btn btn-info merit_results">my Results</button></a>
+                <a href="../results/merit.php"><button class="btn btn-info merit_results">View Merit</button></a>
+                <a href="../results/results.php"><button class="btn btn-info merit_results">my Results</button></a>
             </div>
         </div>
 

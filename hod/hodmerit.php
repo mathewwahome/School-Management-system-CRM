@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['name'])){
-    header('location:index.php');
+    header('location:../index.php');
 }
 ?>
 
@@ -14,12 +14,12 @@ if (!isset($_SESSION['name'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOD merit</title>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="assets/bootstrap/js/popper.min.js"></script>
-    <script src="assets/bootstrap/js/jquery-3.4.0.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="../assets/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/bootstrap/js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -39,7 +39,7 @@ if (!isset($_SESSION['name'])){
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="results.php">MyResults</a>
+                            <a class="nav-link" href="../results/results.php">MyResults</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">logout</a>
@@ -77,10 +77,16 @@ if (!isset($_SESSION['name'])){
             </tr>
 
             <?php
-            require_once "connection_db.php";
+            require_once "../database/connection_db.php";
             $selectQuery = "SELECT * FROM `results` ORDER BY marks DESC";
             $selectdone = mysqli_query($connection, $selectQuery);
-            foreach ($selectdone as $student){
+
+
+            $previous_marks = 0;            
+            $position = 1;
+
+
+            foreach ($selectdone as $key => $student ){
                 $id = $student['id'];
                 $admission = $student['adimision'];
                 $name = $student['studentname'];
@@ -98,7 +104,11 @@ if (!isset($_SESSION['name'])){
                 $marks =$student['marks'];
                 //                    to do......................
 
-                $position = $id;//by marks to get position('usrt --function')
+                if($previous_marks != $marks){
+                    $position = $key + 1;
+                }
+
+                $previous_marks = $marks;//by marks to get position('usrt --function')
 //                the usort function---------mark wahome....
 //                calculating----
 //                1.the mean grade of the class

@@ -15,33 +15,15 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#home">Logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Signin</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">As Teacher</a></li>
-                <li><a class="dropdown-item" href="students/login.php">As student</a></li>
-                <li><a class="dropdown-item" href="#">As stuff</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Signup</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">As Teacher</a></li>
-                <li><a class="dropdown-item" href="#">As student</a></li>
-                <li><a class="dropdown-item" href="#">As stuff</a></li>
-              </ul>
-            </li>
-
+    <nav class="nav_bar">
+      <div class="logo_links">
+        <a href="#home"><h1>Home</h1></a>
+      </div>
+      <div class="links_right">
+          <ul>
+            <a href=""><button>Signin</button></a>
+            <a href=""><button>Signup</button></a>
           </ul>
-        </div>
       </div>
     </nav>
   </header>
