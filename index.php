@@ -1,37 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="assets/css/index.css">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
 </head>
-
 <body>
-  <header>
-    <nav class="nav_bar">
-      <div class="logo_links">
-        <a href="#home"><h1>Home</h1></a>
-      </div>
-      <div class="links_right">
-          <ul>
-            <a href=""><button>Signin</button></a>
-            <a href=""><button>Signup</button></a>
-          </ul>
-      </div>
-    </nav>
-  </header>
-  <section>
-    <div>
 
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">Sign In <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#company">Teacher</a>
+      <a href="#team">Student</a>
+      <a href="#careers">Staff</a>
     </div>
-  </section>
-</body>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Sign Up <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#bring">Teacher</a>
+      <a href="#deliver">Student</a>
+      <a href="#package">Staff</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Register <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#link1">Primary</a>
+      <a href="#link2">High school</a>
+      <a href="#link3">College</a>
+      <a href="#link4">Cumpus</a>
+    </div>
+  </div>
+  <a href="#contact">Contact Us</a>
+</div>
 
+<div style="padding:0 16px">
+  <h3>Subnav/dropdown menu inside a Navigation Bar</h3>
+  <p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.</p>
+</div>
+
+</body>
 </html>

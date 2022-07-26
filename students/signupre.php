@@ -13,7 +13,7 @@ if (isset($_POST['btn_register'])){
         $data = htmlspecialchars($data);
         return $data;
      }
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
     if ($passwordlgth < 6){
         echo "sorry the password is too short";
     }else {

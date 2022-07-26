@@ -15,7 +15,7 @@ if (isset($_POST['login_btn'])){
     $deptwo = 'classteacher';
     $depthree= 'teacher';
 
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
 
     $selectQuery = "SELECT * FROM `teachers` WHERE name= '$name' and password= '$md5' and pin='$pin'";
     $select = mysqli_query($connection, $selectQuery);

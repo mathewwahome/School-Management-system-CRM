@@ -11,7 +11,7 @@ if (isset($_POST['btn_reg'])){
     $md5 = md5($password);//md5
     $pinc = 8380;
 
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
     $insertquery = "INSERT INTO `teachers`(`id`, `name`, `subject`, `form`, `department`, `password`, `pin`) 
                 VALUES (null,'$name','$sub','$form','$department','$md5','$pin')";
     $selectQuery = "SELECT * FROM `teachers` WHERE name='$name'";

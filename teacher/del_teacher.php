@@ -51,31 +51,33 @@ if (isset($_POST["del_btnteacher"])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Delete/Update teachers</title>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="assets/bootstrap/js/popper.min.js"></script>
-    <script src="assets/bootstrap/js/jquery-3.4.0.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/del_teacher.css">
 </head>
 <body>
 <section>
-    <div>
+    <div class="account_delition">
+        
         <h4>Delete Account</h4>
-        <form action="del_teacher.php" class="form m-3" method="post">
+        <form action="del_teacher.php" class="form accountdelitionform" method="post">
             <input type="text" placeholder="name" class="form-control" name="tname" required>
             <input type="password" placeholder="pin" class="form-control" name="pin" required>
             <input type="password" placeholder="password" class="form-control" name="password"required>
             <input type="submit" value="Delete" class="btn btn-danger mt-2" name="del_btnteacher">
         </form>
+       
+     
     </div>
 </section>
 
 <section class="mt-4">
-    <h4>Update Account</h4>
-    <div>
-        <form action="del_teacher.php" class="form m-3" method="post">
+    <div class="account_delition">
+        <h4>Update Account</h4>
+        <form action="del_teacher.php" class="form accountdelitionform" method="post">
             <input type="text" placeholder="name" class="form-control" name="tname" required>
             <input type="text" placeholder="Old pin" class="form-control" required name="o_pin">
             <input type="password" placeholder="New pin" class="form-control" name="n_pin" required>
