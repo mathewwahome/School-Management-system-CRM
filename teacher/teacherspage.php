@@ -20,6 +20,7 @@ if (!isset($_SESSION['name'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="../assets/css/hod.css">
     <link rel="stylesheet" href="assets/css/teaherspage.css">
@@ -64,22 +65,61 @@ if (!isset($_SESSION['name'])) {
             </nav>
         </div>
     </header>
-    <div>
-        <div class="left">
-            <h3>Insert student details</h3>
-            <form action="studentslist.php" method="post" class="form">
-                <input type="text" name="name" required placeholder="Name" class="form-control">
-                <input type="text" name="adm" required placeholder="Admission" class="form-control">
-                <input type="number" name="form" required placeholder="Form" class="form-control">
-                <input type="submit" value="Insert" name="insert_btn" class="btn btn-info mt-2">
-                <?php if (isset($_GET['done'])) { ?>
-                    <p class="error" style="color: green"><?php echo $_GET['done']; ?></p>
-                <?php } ?>
-            </form>
-            
+    <div id="mySidebar" class="sidebar">
+
+        <h2>Menu</h2>
+        <a href="javascript:void(0)" onclick="closeNav()">
+            <h1 style="color: red;">X</h1>
+        </a>
+        <input type="text" id="mySearch" onkeyup="myFunction()" class="form-control" placeholder="Search.." title="Type in a category">
+        <ul id="myMenu">
+
+            <l><a href="#"><i class="fa fa-home"></i>Home</a></l>
+            <l><a href="#"><i class="fa fa-home"></i>Account</a></l>
+            <button class="dropdown-btn pl-2"><i class="fa fa-fw fa-user"></i>Account
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <l><a href="#"><i class="fa fa-fw fa-wrench"></i>Student</a>
+                </l>
+                <l><a href="#"><i class="fa fa-fw fa-user"></i>Clients</a>
+                </l>
+                <l><a href="#"><i class="fa fa-home"></i>Delete</a></l>
+                <l><a href="#"><i class="fa fa-fw fa-wrench"></i>Update</a>
+                </l>
+                <l><a href="#"><i class="fa fa-fw fa-user"></i>Info</a>
+                </l>
+            </div>
+            <button class="dropdown-btn pl-2"><i class="fa fa-fw fa-user"></i>Results
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <l><a href="#"><i class="fa fa-fw fa-wrench"></i>Student</a>
+                </l>
+                <l><a href="#"><i class="fa fa-fw fa-user"></i>Merit</a>
+                </l>
+                <l><a href="#"><i class="fa fa-home"></i>Delete</a></l>
+                <l><a href="#"><i class="fa fa-fw fa-wrench"></i>Update</a>
+                </l>
+                <l><a href="#"><i class="fa fa-fw fa-user"></i>Check</a>
+                </l>
+            </div>
+        </ul>
+        <button class="dropdown-btn pl-2">Pages
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#"><i class="fa fa-fw fa-user"></i>Login</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
         </div>
     </div>
-    <section class="right">
+
+
+    <div id="main">
+        <h2>Collapsed Sidebar</h2>
+        <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+        <button class="openbtn" onclick="openNav()">☰</button>
         <div class="row m-4 ">
             <div class="card m-3" style="width: 400px;">
                 <div class="card-header">
@@ -168,16 +208,62 @@ if (!isset($_SESSION['name'])) {
                 </div>
             </div>
         </div>
-    </section>
-    <footer>
-        <!--    jumbotron section-->
-        <div class="mt-4 p-5 rounded footer">
-            <h1>
-                <font style="color: deeppink;font-family: 'Poppins', 'Montserrat', sans-serif">X</font>-school
-            </h1>
-            <p>The school to be in</p>
-        </div>
-    </footer>
+        </section>
+        <footer>
+            <!--    jumbotron section-->
+            <div class="mt-4 p-5 rounded footer">
+                <h1>
+                    <font style="color: deeppink;font-family: 'Poppins', 'Montserrat', sans-serif">X</font>-school
+                </h1>
+                <p>The school to be in</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("l");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
