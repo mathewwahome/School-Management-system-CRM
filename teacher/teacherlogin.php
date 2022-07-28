@@ -27,9 +27,9 @@ if (isset($_POST['login_btn'])){
 
 //        specific access
         if ($name == 'admin' && $department == 'zero' && $password == "admin123"){
-            header("location:admin.php");
+            header("location:../admin/admin.php");
         }elseif ($department == 'hod'){
-            header("location:hod.php");
+            header("location:../hod/hod.php");
         }elseif ($department == 'classteacher'){
             header("location:teacherspage.php");
         }elseif ($department == 'teacher'){
