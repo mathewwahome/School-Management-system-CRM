@@ -16,10 +16,8 @@
     <form action="std_bk_giving.php" method="post">
         <input type="submit"class='btn btn-info mb-3' name='give_book_to_std'>
     </form>
-
     <form action="std_bk_giving.php" method="post">
         <input type="submit" value="collect"class='btn btn-info' name='get_book_to_std'>
-    
     </form> -->
     <section>
         <div class="mainlib_side_bar">
@@ -155,9 +153,6 @@
                         <?php } ?>
                     </form>
                 </div>
-
-
-
                 <div class='books_form'>
                     <h1>Collecting of books</h1>
                     <form action='std_bk_giving_db.php' class='form' method='post'>

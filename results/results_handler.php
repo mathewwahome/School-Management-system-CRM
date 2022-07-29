@@ -14,31 +14,43 @@ if (isset($_POST["resultsadd_btn"])) {
     $comp = $_POST["u_comp"];
 //meangrade
     $marks = ($math + $english + $kiswa + $chem + $phy + $cre + $bio + $histo + $bst + $comp);
-    $meangade = ($math + $english + $kiswa + $chem + $phy + $cre + $bio + $histo + $bst + $comp) / 9;
+    $average_marks = ($math + $english + $kiswa + $chem + $phy + $cre + $bio + $histo + $bst + $comp) / 9;
 
-    if ($meangade <= 30){
-        $meangade = "E";
-    }elseif ($meangade <= 40){
-        $meangade = "D-";
-    }elseif ($meangade <= 50){
-        $meangade = "D";
-    }elseif ($meangade <= 60){
-        $meangade = "D+";
-    }elseif ($meangade <= 70){
+    if ($average_marks <= 35.0) {
+        $meangrade = "E";
+    } elseif ($average_marks <= 39.0) {
+        $meangrade = "D-";
+    } elseif ($average_marks <= 44.0) {
+        $meangrade = "D";
+    } elseif ($average_marks <= 50.0) {
+        $meangrade = "D+";
+    } elseif ($average_marks <= 54.0) {
         $meangrade = "C-";
-    }elseif ($meangade <= 80){
-            $meangade = "A";
-    }else ($meangade= "A+");
+    } elseif ($average_marks <= 59.0) {
+        $meangrade = "C";
+    } elseif ($average_marks <= 65.0) {
+        $meangrade = "C+";
+    } elseif ($average_marks <= 70.0) {
+        $meangrade = "B-";
+    } elseif ($average_marks <= 75.0) {
+        $meangrade = "B";
+    } elseif ($average_marks <= 80.0) {
+        $meangrade = "B+";
+    } elseif ($average_marks <= 85.0) {
+        $meangrade = "A-";
+    } else {
+        $meangrade = "A";
+    }
 //getting the positions of students
 //to be done mark.
 //    calculating the grade...
-        require_once "connection_db.php";
+        require_once "../database/connection_db.php";
 
         $additionQuery = "INSERT INTO `results`(`id`, `adimision`, `studentname`, `math`, `english`,
                       `kiswahili`, `chemistry`, `physics`, `CRE`, `biology`, `history`, `bustness`,
                       `computer`,`grade`,`position`,`marks`)
                     VALUES (null,'$addmission','$student','$math','$english','$kiswa','$chem',
-                            '$phy','$cre','$bio','$histo','$bst','$comp','$meangade','tt','$marks')";
+                            '$phy','$cre','$bio','$histo','$bst','$comp','$meangrade','tt','$marks')";
         $additionfinal = mysqli_query($connection, $additionQuery);
 
         if (isset($additionfinal)) {
@@ -52,7 +64,7 @@ if (isset($_POST["resultsadd_btn"])) {
 if (isset($_POST['add_stdone_open_results'])){
     $res= $_POST['open'];
 
-    require_once "connection_db.php";
+    require_once "../database/connection_db.php";
     $insertq= "UPDATE `results` SET `computer`='$res' WHERE adimision=0";
     $insert = mysqli_query($connection, $insertq);
     if (isset($insert)) {

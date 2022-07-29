@@ -1,9 +1,12 @@
-form {
-    width: 300px;
+.signup_container input {
+    background: unset;
 }
 
-.signup_container {
+.login_main_section{
+    width: auto;
+    height: auto;
     width: 60%;
+    margin: auto;
     align-self: center;
     background-image: url(../images/shubham-dhage-ykFTt5Dq1RU-unsplash.jpg);
     margin-top: 5%;
@@ -14,11 +17,8 @@ form {
     background-size: cover;
     color: white;
 }
-
-.signup_container input {
-    background: unset;
-}
-
-#lib_signup_form label {
-    text-align: left;
+.login_mini_main_section{
+    margin: auto;
+    width: 400px;
+    height: auto;
 }

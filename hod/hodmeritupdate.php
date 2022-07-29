@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['name'])){
-    header('location:../index.php');
-}
+// session_start();
+// if (!isset($_SESSION['name'])){
+//     header('location:../index.php');
+// }
 ?>
 <?php
 
@@ -11,13 +11,6 @@ if (isset($_GET["u_id"])){
 //    receive the data from the url
     $userId = $_GET["u_id"];
     $userName =$_GET["u_name"];
-}
-
-
-
-?>
-
-<?php
 
 require_once "../database/connection_db.php";
 $sql = "SELECT * FROM `results` WHERE id = '$userId'";
@@ -40,6 +33,7 @@ foreach ($conectsql as $student) {
     $marks = $student['marks'];
     //                    to do......................
     $position = $id;
+}
 }
 //                the usort function---
 ?>

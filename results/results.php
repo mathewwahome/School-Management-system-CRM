@@ -1,9 +1,9 @@
 <!--they are ment for a spesific student-->
 <?php
-session_start();
-if (!isset($_SESSION['name'])){
-    header('location:../index.php');
-}
+// session_start();
+// if (!isset($_SESSION['name'])){
+//     header('location:../index.php');
+// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,7 +26,8 @@ if (!isset($_SESSION['name'])){
 <div class="row">
     <div class="col">
         <h4 class="text-center">View your own results</h4>
-        <form class="form" method="post"  action="myresult.php"> <!--        spesific_std_rslt.php-->
+        <form class="form" method="post"  action="myresult.php"> 
+            <!--        spesific_std_rslt.php-->
             <input type="text" placeholder="Studentname" name="stdname" class="form-control">
             <input type="text" placeholder="Admission No." name="stdadm" class="form-control">
             <input type="password" placeholder="Password" name="stdpass" class="form-control">

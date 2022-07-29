@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['name'])) {
-    header('location:index.php');
-}
+// session_start();
+// if (!isset($_SESSION['name'])) {
+//     header('location:index.php');
+// }
 ?>
 
 <?php
@@ -14,7 +14,7 @@ if (!isset($_SESSION['name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teachers page</title>
+    <title>Hod page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -75,7 +75,7 @@ if (!isset($_SESSION['name'])) {
         <ul id="myMenu">
 
             <l><a href="#"><i class="fa fa-home"></i>Home</a></l>
-            <button class="dropdown-btn pl-2"><i class="fa fa-fw fa-user"></i>Account
+            <button class="dropdown-btn pl-2"><i class="fa fa-fw fa-user"></i>My Account
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -225,7 +225,7 @@ if (!isset($_SESSION['name'])) {
         <section>
             <!-- addmission of new students 
         if its form one the form section can be left empty-->
-            <div class="admission_form_section" id="addimission">
+            <div class="admission_form_section form_styles_in_students" id="addimission">
                 <h3>ADDMISSION OF STUDENTS</h3>
                 <form action="addmission_db.php">
                     <label for="">Student name</label>
@@ -244,9 +244,9 @@ if (!isset($_SESSION['name'])) {
             </div>
         </section>
         <section>
-            <div class="account_delition" id="delition">
+            <div class="account_delition form_styles_in_students" id="delition">
                 <h4>Delete Account</h4>
-                <form action="del_teacher.php" class="form accountdelitionform" method="post">
+                <form action="del_teacher.php" class="form accountdelitionform form_styles_in_students" method="post">
                     <label>Full Name:</label>
                     <input type="text" placeholder="name" class="form-control" name="tname" required>
                     <label>Pin:</label>
@@ -261,9 +261,9 @@ if (!isset($_SESSION['name'])) {
         </section>
 
         <section class="mt-4">
-            <div class="account_delition" id="updating">
+            <div class="account_delition form_styles_in_students" id="updating">
                 <h4>Update Account</h4>
-                <form action="del_teacher.php" class="form accountdelitionform" method="post">
+                <form action="del_teacher.php" class="form accountdelitionform form_styles_in_students" method="post">
                     <input type="text" placeholder="name" class="form-control" name="tname" required>
                     <input type="text" placeholder="Old pin" class="form-control" required name="o_pin">
                     <input type="password" placeholder="New pin" class="form-control" name="n_pin" required>
@@ -284,51 +284,7 @@ if (!isset($_SESSION['name'])) {
             </div>
         </footer>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
-    <script>
-        function myFunction() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("mySearch");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myMenu");
-            li = ul.getElementsByTagName("l");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-    </script>
-    <script>
-        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <script src="assets/js/hod.js"></script>
 </body>
 
 </html>

@@ -18,8 +18,8 @@
 
     </header>
     <section>
-        <center>
-            <div class="signup_container">
+        <div class="login_main_section">
+            <div class="signup_container login_mini_main_section">
                 <form action="signup_db.php" id='lib_signup_form' method='post'>
                     <center>
                         <h1>Welcome, Signup Here.</h1>
@@ -55,7 +55,7 @@
                 </form>
 
             </div>
-        </center>
+        </div>
 
     </section>
     <footer>

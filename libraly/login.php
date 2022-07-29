@@ -19,8 +19,8 @@
     </header>
     <section>
 
-        <center>
-            <div class="signup_container">
+        <div class="login_main_section">
+            <div class="signup_container login_mini_main_section">
                 <form action="login_db.php" id='lib_signup_form' method='post'>
                     <center>
                         <h1>Welcome Back.</h1>
@@ -31,7 +31,6 @@
                     <?php if (isset($_GET['errorl'])) { ?>
                         <p class="errorl" style="color: red"><?php echo $_GET['errorl']; ?></p>
                     <?php } ?>
-
                     <label>User Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Name" required>
                     <label>Libralian No.</label>
@@ -45,7 +44,7 @@
                 </form>
 
             </div>
-        </center>
+        </div>
 
     </section>
     <footer>

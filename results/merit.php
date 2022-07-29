@@ -1,10 +1,10 @@
 <?php
 ?>
 <?php
-session_start();
-if (!isset($_SESSION['name'])){
-    header('location:index.php');
-}
+// session_start();
+// if (!isset($_SESSION['name'])){
+//     header('location:index.php');
+// }
 ?>
 <!--merit page-->
 <!doctype html>
