@@ -89,7 +89,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <l><a href="#"><i class="fa fa-fw fa-wrench"></i>Student</a>
+                <l><a href="#student_result_search_form"><i class="fa fa-fw fa-wrench"></i>Student</a>
                 </l>
                 <l><a href="#"><i class="fa fa-fw fa-user"></i>Merit</a>
                 </l>
@@ -229,20 +229,54 @@
                 <h3>ADDMISSION OF STUDENTS</h3>
                 <form action="addmission_db.php">
                     <label for="">Student name</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="name" placeholder="" class="form-control">
                     <label for="">student admission</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="adm" placeholder="" class="form-control">
                     <label for="">student upi</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="upi" placeholder="" class="form-control">
                     <label for="">form</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="form" placeholder="" class="form-control">
                     <label for="">parent/guardian name</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="prent" placeholder="" class="form-control">
                     <label for="">parent phone number</label>
-                    <input type="text" required name="" placeholder="" class="form-control">
+                    <input type="text" required name="phone" placeholder="" class="form-control">
+                    <input type="submit" name="register" class="btn btn-info" value="Reister">
                 </form>
             </div>
         </section>
+        <div class="account_delition form_styles_in_students" id="student_result_search_form">
+            <h4>check the results ofa spesific student.</h4>
+            <form action="del_teacher.php" class="form accountdelitionform form_styles_in_students" method="post">
+                <label>Full Name:</label>
+                <input type="text" placeholder="name" class="form-control" name="tname" required>
+                <label>Pin:</label>
+                <input type="password" placeholder="pin" class="form-control" name="pin" required>
+                <label>Password:</label>
+                <input type="password" placeholder="password" class="form-control" name="password" required>
+                <input type="submit" value="Delete" class="btn btn-danger mt-2" name="del_btnteacher">
+            </form>
+
+
+        </div>
+        <div class="account_delition " id="updating">
+            <h4>Adation of revision materials</h4>
+            <p>Below are the Download Links to all the School Resources for High Schools,
+                 Primary School, Pre-Primary, College, and University.
+                  The resources include teaching/learning class notes, Class Readers,
+                   Topical (topic by topic) Questions and Answers, Termly Examination 
+                   Papers and Marking Schemes, Lesson Plans, Powerpoint Notes and Slides,
+                    Schemes of Work, KCPE KNEC Past Papers, KCSE KNEC Past Papers, Confidentials
+                 and Marking Schemes, and Joint Mocks Examinations Papers, Lecture Notes, etc.</p>
+            <form action="del_teacher.php" class="form accountdelitionform form_styles_in_students" method="post">
+                <input type="text" placeholder="name" class="form-control" name="tname" required>
+                <input type="text" placeholder="Old pin" class="form-control" required name="o_pin">
+                <input type="password" placeholder="New pin" class="form-control" name="n_pin" required>
+                <input type="password" placeholder="password" class="form-control" name="password" required>
+                <input type="password" placeholder="New password" class="form-control" name="npass" required>
+                <input type="submit" value="Update" class="btn btn-danger mt-2" name="upd_btnteacher">
+            </form>
+            <a href="teacherspage.php"><button class="btn btn-success m-2">Back</button></a>
+        </div>
         <section>
             <div class="account_delition form_styles_in_students" id="delition">
                 <h4>Delete Account</h4>
